@@ -10,7 +10,7 @@ namespace Benchmark.Core.Protobuf
         {
             var wrapper = new DictionaryForSerialization<int, int>(dict);
 
-            using (MemoryStream ms = new MemoryStream())
+            using (LeanMemoryStream ms = new LeanMemoryStream())
             {
                 Serializer.Serialize(ms, wrapper);
             }
@@ -18,7 +18,7 @@ namespace Benchmark.Core.Protobuf
 
         public static void RunWithPrefixLength(Dictionary<int, int> dict)
         {
-            using (MemoryStream ms = new MemoryStream())
+            using (LeanMemoryStream ms = new LeanMemoryStream())
             {
                 foreach (var kvp in dict)
                 {
