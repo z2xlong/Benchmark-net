@@ -418,13 +418,13 @@
         private void CheckDisposed()
         {
             if (_disposed)
-                throw new InvalidOperationException("LeanMemoryStream is disposed.");
+                throw new ObjectDisposedException("LeanMemoryStream is disposed.");
         }
 
         private void EnsureWriteable()
         {
             if (!CanWrite)
-                throw new InvalidOperationException("LeanMemoryStream cannot be writed.");
+                throw new NotSupportedException("LeanMemoryStream cannot be writed.");
         }
 
         // returns a bool saying whether we allocated a new array.

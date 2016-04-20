@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BC09DDAB-0444-437C-922E-1C9BCE38F045}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{D0BEE21D-1E53-4973-8D51-624FFAEFC256}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Benchmark.Core</RootNamespace>
-    <AssemblyName>Benchmark.Core</AssemblyName>
+    <RootNamespace>Benchmark.Console</RootNamespace>
+    <AssemblyName>Benchmark.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,27 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Enumerator\AbstractTree.cs" />
-    <Compile Include="Enumerator\EnumeratorTest.cs" />
-    <Compile Include="Enumerator\FlatternTree.cs" />
-    <Compile Include="Enumerator\FlatternTreeEnumerator.cs" />
-    <Compile Include="Enumerator\ITree.cs" />
-    <Compile Include="Infra\ByteArrayPool.cs" />
-    <Compile Include="Infra\ObjectPool.cs" />
-    <Compile Include="MemoryStream\LeanMemoryStream.cs" />
-    <Compile Include="MemoryStream\LeanMemStreamTest.cs" />
-    <Compile Include="Model\Foo.cs" />
-    <Compile Include="Model\WeakObjectPool.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protobuf\Deserialize.cs" />
-    <Compile Include="Protobuf\DictionaryForSerialization.cs" />
-    <Compile Include="Protobuf\Serialize.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Benchmark.Core\Benchmark.Core.csproj">
+      <Project>{bc09ddab-0444-437c-922e-1c9bce38f045}</Project>
+      <Name>Benchmark.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

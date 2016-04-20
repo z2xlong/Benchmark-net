@@ -21,7 +21,7 @@ namespace Benchmark
         [PerfBenchmark(Description = "Test to ensure that a minimal throughput test can be rapidly executed.",
         NumberOfIterations = 3, RunMode = RunMode.Throughput,
         RunTimeMilliseconds = 1000, TestMode = TestMode.Test)]
-        [CounterThroughputAssertion("TestCounter", MustBe.GreaterThan, 10000000.0d)]
+        [CounterThroughputAssertion("ProtobufCounter", MustBe.GreaterThan, 10000000.0d)]
         [MemoryAssertion(MemoryMetric.TotalBytesAllocated, MustBe.LessThanOrEqualTo, ByteConstants.ThirtyTwoKb)]
         [GcTotalAssertion(GcMetric.TotalCollections, GcGeneration.Gen2, MustBe.ExactlyEqualTo, 0.0d)]
         public void SerializeWrapper()

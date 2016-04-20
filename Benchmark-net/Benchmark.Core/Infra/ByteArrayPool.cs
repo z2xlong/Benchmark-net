@@ -121,11 +121,13 @@ namespace Benchmark.Core
                 if (_recycledBytes - _reusedBytes < _poolSizeThreshold)
                 {
                     var bytePool = _pools[poolIndex];
+                    int length = bytes.Length;
+                    Array.Clear(bytes, 0, length);
+
                     if (bytePool.Reclaim(ref bytes))
                     {
-                        Array.Clear(bytes, 0, bytes.Length);
                         _recycles[poolIndex] += 1;
-                        Interlocked.Add(ref _recycledBytes, bytes.Length);
+                        Interlocked.Add(ref _recycledBytes, length);
                     }
                 }
             }
