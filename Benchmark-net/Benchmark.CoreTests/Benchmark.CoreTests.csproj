@@ -74,6 +74,9 @@
     <Compile Include="MemoryStream\LeanMemoryStream_ConstructorTests.cs" />
     <Compile Include="MemoryStream\LeanMemoryStream_TryGetBufferTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="String2IntTest.cs" />
+    <Compile Include="String2Int\StringExtensionTests.cs" />
+    <Compile Include="StringListEnumeratorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Benchmark.Core\Benchmark.Core.csproj">

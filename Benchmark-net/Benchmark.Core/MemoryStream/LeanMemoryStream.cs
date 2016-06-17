@@ -6,7 +6,7 @@
 
     [Serializable]
     [ComVisible(true)]
-    public class LeanMemoryStream : Stream
+    public class LeanMemoryStream : MemoryStream
     {
         #region fields
 
@@ -125,7 +125,7 @@
         {
         }
 
-        public virtual byte[] GetBuffer()
+        public override byte[] GetBuffer()
         {
             if (!_exposable)
                 throw new UnauthorizedAccessException("UnauthorizedAccess_MemStreamBuffer");
@@ -150,7 +150,7 @@
         // The capacity cannot be set to a value less than the current length
         // of the stream.
         // 
-        public virtual int Capacity
+        public override int Capacity
         {
             get
             {
@@ -326,8 +326,7 @@
 
         }
 
-        [Obsolete("This method has degraded performance vs. GetBuffer and should be avoided.")]
-        public virtual byte[] ToArray()
+        public override byte[] ToArray()
         {
             if (!_expandable)
                 throw new InvalidOperationException("MemoryStream::GetBuffer will let you avoid a copy.");
@@ -404,7 +403,7 @@
         }
 
         // Writes this MemoryStream to another stream.
-        public virtual void WriteTo(Stream stream)
+        public override void WriteTo(Stream stream)
         {
             if (stream == null)
                 throw new ArgumentNullException("stream", "ArgumentNull_Stream");
@@ -466,7 +465,7 @@
                     _disposed = true;
                     _writable = false;
                     _expandable = false;
-
+                    _buffer = null;
                     GC.SuppressFinalize(this);
                 }
             }

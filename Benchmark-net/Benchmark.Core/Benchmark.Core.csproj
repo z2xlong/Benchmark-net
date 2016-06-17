@@ -44,13 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="RemoveAll\ListRemoveAllTest.cs" />
+    <Compile Include="Sort\HotelScoreComparer.cs" />
+    <Compile Include="Sort\HotelSortTest.cs" />
+    <Compile Include="Sort\LevelOneOrder.cs" />
+    <Compile Include="Sort\ListExtension.cs" />
+    <Compile Include="String2Int\StringExtension.cs" />
+    <Compile Include="StringIntern\InterTest.cs" />
+    <Compile Include="StringIntern\StringUtility.cs" />
+    <Compile Include="Sundry\StringCase.cs" />
+    <Compile Include="SynchronizedCache.cs" />
     <Compile Include="Enumerator\AbstractTree.cs" />
     <Compile Include="Enumerator\EnumeratorTest.cs" />
     <Compile Include="Enumerator\FlatternTree.cs" />
     <Compile Include="Enumerator\FlatternTreeEnumerator.cs" />
     <Compile Include="Enumerator\ITree.cs" />
     <Compile Include="Infra\ByteArrayPool.cs" />
+    <Compile Include="Infra\CodeTimer.cs" />
     <Compile Include="Infra\ObjectPool.cs" />
     <Compile Include="MemoryStream\LeanMemoryStream.cs" />
     <Compile Include="MemoryStream\LeanMemStreamTest.cs" />
@@ -60,6 +70,11 @@
     <Compile Include="Protobuf\Deserialize.cs" />
     <Compile Include="Protobuf\DictionaryForSerialization.cs" />
     <Compile Include="Protobuf\Serialize.cs" />
+    <Compile Include="String2Int\SplitorPerfTest.cs" />
+    <Compile Include="String2Int\String2IntPerfTest.cs" />
+    <Compile Include="String2Int\StringIntListEnumerator.cs" />
+    <Compile Include="String2Int\StringListEnumerator.cs" />
+    <Compile Include="String2Int\StringToNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
